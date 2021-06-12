@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  #home page
+  get '/' => 'sessions#welcome'
+
   resources :categories
   resources :messages
   resources :patients
