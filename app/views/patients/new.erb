@@ -1,0 +1,22 @@
+<h1> Sign Up </h1>
+<%=form_for(@patient) do |p| %>
+    <%=p.label :first_name%>
+    <%=p.text_field :first_name%>
+    <%=p.label :last_name%>
+    <%=p.text_field :last_name%>
+    <br>
+    <br>
+    <%=p.label :email%>
+    <%=p.email_field :email%>
+    <br>
+    <br>
+    <%=p.label :address%>
+    <%=p.text_field :address%>
+    <br>
+    <br>
+    <%=p.label :password%>
+    <%=p.password_field :password%>
+    <br>
+    <br>
+    <%=p.submit%>
+<% end %>
