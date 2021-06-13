@@ -1,0 +1,15 @@
+<h1> Login! </h1>
+
+<%= form_for(:patient) do |p| %>
+   
+    <%= p.label :email %>
+    <%= p.email_field :email %>
+    <br>
+    <br>
+    <%= p.label :password %>
+    <%= p.password_field :password %>
+    <br>
+    <br>
+    <%= p.submit "Login" %>
+
+<% end %>
