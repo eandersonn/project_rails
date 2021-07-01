@@ -7,14 +7,15 @@ class PatientsController < ApplicationController
     def create
         @patient = Patient.new(patient_params)
         if @patient.save
-            session[:patient_id] = @patient_id
-            redirect_to @patient
+            session[:patient_id] = @patient.id
+            redirect_to patient_path(@patient)
         else
             render :new
         end
     end
 
     def show
+        redirect_if_not_logged_in
         @patient = Patient.find_by_id(params[:id])
         if !@patient
             redirect_to '/'

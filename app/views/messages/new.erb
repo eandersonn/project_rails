@@ -1,0 +1,25 @@
+
+<%= render partial: 'layouts/errors', locals: {object: @message}  %>
+<br>
+<br>
+<%= form_for(@message) do |f|%>
+  <% if params[:appointment_id] %>
+    <%= f.hidden_field :appointment_id %>
+  <% else %>
+    <div>
+      <h2><%= f.label :appointment_id, "Select an Appointment" %></h2>
+      <%= f.collection_select :appointment_id, Appointment.all, :id, :title %>
+    </div>
+  <% end %>
+  <div>
+  <br>
+  <br>
+    <%= f.label :content %>
+    <%= f.text_area :content, size: "35x2" %>
+  </div>
+  <br>
+
+
+
+  <%= f.submit %>
+<% end %>

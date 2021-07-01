@@ -1,22 +1,10 @@
 module ApplicationHelper
-
-    private
-    def current_patient
-        if session[:patient_id]
-            @current_patient
+    
+    def render_bar
+        if logged_in?
+            render partial: 'layouts/loggedin_links'
         else
-            @current_patient = Patient.find_by(session[:patient_id])
+            render partial: 'layouts/loggedout_links'
         end
     end
-
-    def logged_in?
-        !!session[:patient_id]
-    end
-
-    def redirect_if_not_Logged_in
-        if !logged_in?
-            redirect_to '/'
-        end
-    end
-
 end

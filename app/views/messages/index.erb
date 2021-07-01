@@ -1,0 +1,15 @@
+<% if @appointment %>
+  <h1> Messages for <%= @appointment.title%> - <%= @appointment.category_name%></h1>
+<% else %>
+  <h1>All the Messages </h1>
+<% end %>
+
+<ul>
+<% @message.each do |message| %>
+
+  <li>
+  <%= message.content %> - Written By: <%= message.patient.first_name%> <%= message.patient.last_name%>
+  </li> <br>
+
+<% end %>
+</ul>

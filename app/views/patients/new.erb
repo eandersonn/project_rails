@@ -1,5 +1,8 @@
 <h1> Sign Up </h1>
-<%=form_for(@patient) do |p| %>
+
+<%= render partial: 'layouts/errors', locals: {object: @patient} %>
+
+<%= form_for(:patient) do |p| %>
     <%=p.label :first_name%>
     <%=p.text_field :first_name%>
     <%=p.label :last_name%>

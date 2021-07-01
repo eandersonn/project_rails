@@ -1,0 +1,8 @@
+<h1>Welcome to <%= @patient.first_name%>'s homepage! </h1>
+
+<h3>Here are the ice creams messaged by <%=@patient.first_name%>:</h3>
+<ul>
+  <% @patient.messaged_appointments.each do |a|%>
+  <li> <%= link_to a.category.name, appointment_path(a)%> </li>
+  <% end %>
+</ul>

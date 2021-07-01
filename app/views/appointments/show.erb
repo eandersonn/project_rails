@@ -1,0 +1,14 @@
+<h1><%= @appointment.title%>  </h1>
+
+<h2> <%= @appointment.category_name %> </h2>
+<div>
+  <p><%= @appointment.content %></p>
+</div>
+
+<h3>Added by: <%= link_to @appointment.patient.first_name, patient_path(:patient)%> </h3>
+
+<%= link_to "Edit This Appointment", edit_appointment_path(@appointment) if @appointment.patient == current_patient%>
+
+<br></br>
+
+<%= link_to "See all Messages", appointment_messages_path(@appointment) %>

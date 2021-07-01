@@ -1,0 +1,15 @@
+
+<%= form_for @appointment do |a| %>
+
+    <%= a.label :title %>
+    <%= a.text_field :title %>
+
+    <p> Write a more detailed description on why or what you are scheduling an appointment for. </p>
+    <%= a.label :content %>
+    <%= a.text_area :content %>
+
+    <p> Select Your Appointment Category </p>
+    <%= a.collection_select :category_id, Category.all, :id, :name %>
+
+    <%= a.submit %>
+<% end %>

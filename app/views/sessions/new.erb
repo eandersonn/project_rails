@@ -1,5 +1,7 @@
 <h1> Login! </h1>
 
+<h3><%= flash[:error] %></h3>
+
 <%= form_for(:patient) do |p| %>
    
     <%= p.label :email %>

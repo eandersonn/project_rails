@@ -1,0 +1,7 @@
+<h1> All The Appointments </h1>
+<br>
+<% @appointments.each do |t| %>
+    <h2> <%= link_to t.title, appointment_path(t.id) %> 
+    <h3> <%= t.category.name %> </h2>
+<% end %>
+  
